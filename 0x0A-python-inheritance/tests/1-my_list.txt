@@ -4,3 +4,15 @@
 >>> my_list = MyList([4, 5, 2])
 >>> my_list.print_sorted()
 [2, 4, 5]
+
+>>> my_list = MyList([5, -1, 0])
+>>> my_list.print_sorted()
+[-1, 0, 5]
+
+>>> my_list = MyList([11])
+>>> my_list.print_sorted()
+[11]
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
