@@ -16,3 +16,24 @@
 >>> my_list = MyList([])
 >>> my_list.print_sorted()
 []
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_list2' is not defined
+
+>>> list = [1, 9, 7]
+>>> my_list = MyList(list)
+>>> my_list.print_sorted()
+[1, 7, 9]
+
+>>> my_list = MyList([2, 2, 2, 2])
+>>> my_list.print_sorted()
+[2, 2, 2, 2]
+
+>>> my_list = [1, 2, 3]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'print_sorted'
