@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""1-my_list.py"""
+"""
+Defines MyList class that inherits from
+list class
+"""
 
 class MyList(list):
     """
@@ -12,5 +15,4 @@ class MyList(list):
         Prints the list, but sorted in
         ascending order.
         """
-        sorted_list = sorted(self)
-        print(sorted_list)
+        print(sorted(self))
