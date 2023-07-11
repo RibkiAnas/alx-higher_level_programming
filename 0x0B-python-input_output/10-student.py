@@ -25,11 +25,10 @@ class Student:
         Returns a dictionary representation
         of the Student object
         """
-        if attrs in None:
-            return self.__dict__
-        else:
-            result = {}
-            for attr in attrs:
-                if attr in self.__dict__:
-                    result[attr] = self.__dict__[attr]
-            return result
+        if isinstance(attrs, list)
+        and all(isinstance(item, str)
+                for item in attrs):
+            return {d: getattr(self, d)
+                    for d in attrs
+                    if hasattr(self, d)}
+        return self.__dict__
