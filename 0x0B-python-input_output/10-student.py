@@ -30,6 +30,6 @@ class Student:
         else:
             result = {}
             for attr in attrs:
-                if hasattr(self, attr):
-                    result[attr] = getattr(self, attr)
+                if attr in self.__dict__:
+                    result[attr] = self.__dict__[attr]
             return result
