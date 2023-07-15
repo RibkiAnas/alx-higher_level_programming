@@ -24,6 +24,7 @@ class Rectangle(Base):
     def width(self):
         """Getter for width attribute."""
         return self.__width
+    
     @width.setter
     def width(self, value):
         """Setter for width attribute"""
@@ -37,6 +38,7 @@ class Rectangle(Base):
     def height(self):
         """Getter for height attribute"""
         return self.__height
+    
     @height.setter
     def height(self, value):
         """Setter for height attribute"""
@@ -50,6 +52,7 @@ class Rectangle(Base):
     def x(self):
         """Getter for x attribute."""
         return self.__x
+    
     @x.setter
     def x(self, value):
         """Setter for x attribute"""
@@ -63,6 +66,7 @@ class Rectangle(Base):
     def y(self):
         """Getter for y attribute"""
         return self.__y
+    
     @y.setter
     def y(self, value):
         """Setter for y attribute"""
@@ -78,3 +82,11 @@ class Rectangle(Base):
         Rectangle instance
         """
         return self.width * self.height
+
+    def display(self):
+        """
+        Prints the Rectangle instance with
+        the character #
+        """
+        for _ in range(self.height):
+            print("#" * self.width)
