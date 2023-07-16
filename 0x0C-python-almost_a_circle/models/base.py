@@ -3,6 +3,7 @@
 Define class Base.
 """
 import json
+import os
 
 
 class Base:
@@ -55,3 +56,33 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all
+        attributes already set.
+        """
+        instance = cls.__new__(cls)
+        instance.update(**dictionary)
+        return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+         Returns a list of instances.
+        """
+        filename = f"{cls.__name__}.json"
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, "r") as file:
+            json_string = file.read()
+
+        if not json_string:
+            return []
+
+        json_list = json.loads(json_string)
+        instances = [cls.create(**dictionary)
+                     for dictionary in json_list]
+        return instances
