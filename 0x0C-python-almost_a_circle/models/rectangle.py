@@ -24,7 +24,7 @@ class Rectangle(Base):
     def width(self):
         """Getter for width attribute."""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """Setter for width attribute"""
@@ -38,7 +38,7 @@ class Rectangle(Base):
     def height(self):
         """Getter for height attribute"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """Setter for height attribute"""
@@ -52,7 +52,7 @@ class Rectangle(Base):
     def x(self):
         """Getter for x attribute."""
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """Setter for x attribute"""
@@ -66,7 +66,7 @@ class Rectangle(Base):
     def y(self):
         """Getter for y attribute"""
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """Setter for y attribute"""
@@ -98,7 +98,8 @@ class Rectangle(Base):
         Returns a string representation of
         the Rectangle instance
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return (f"[Rectangle] ({self.id}) "
+                f"{self.x}/{self.y} - {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """
@@ -133,9 +134,9 @@ class Rectangle(Base):
         of a Rectangle.
         """
         return {
-            'id': self.id,
-            'width': self.width,
-            'height': self.height,
             'x': self.x,
-            'y': self.y
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
         }
