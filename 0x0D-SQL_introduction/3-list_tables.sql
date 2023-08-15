@@ -1,5 +1,5 @@
 -- Get the database name from the argument
-USE $1
+SET @dbname = DATABASE();
 
 -- Show all tables in the database
-SHOW TABLES FROM '$1'
+SHOW TABLES FROM @dbname
