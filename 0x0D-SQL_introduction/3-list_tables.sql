@@ -2,4 +2,4 @@
 USE $1
 
 -- Show all tables in the database
-SHOW TABLES from '$1'
+SHOW TABLES FROM '$1'
