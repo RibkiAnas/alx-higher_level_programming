@@ -15,7 +15,7 @@ if __name__ == '__main__':
     password = sys.argv[2]
     database = sys.argv[3]
     """Create engine that connects to MySQL server at localhost:3306"""
-    engine = create_engine("""mysql+mysqldb://{}:{}@127.0.0.1:3307/{}"""
+    engine = create_engine("""mysql+mysqldb://{}:{}@localhost:3306/{}"""
                            .format(username, password, database))
     Base.metadata.create_all(engine)
     """Create a configured "Session" class"""
