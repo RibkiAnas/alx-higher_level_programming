@@ -17,7 +17,8 @@ if __name__ == '__main__':
     database = sys.argv[3]
     """Create engine that connects to MySQL server at localhost:3306"""
     engine = create_engine("""mysql+mysqldb://{}:{}@localhost:3306/{}"""
-                           .format(username, password, database))
+                           .format(username, password, database),
+                           pool_pre_ping=True)
     Base.metadata.create_all(engine)
     """Create a configured "Session" class"""
     Session = sessionmaker(bind=engine)
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     """Create a new state object"""
     new_state = State(name="California")
     """Create a new city object linked to the new state"""
-    new_city = City(name="San Francisco", state=new_state)
+    new_city = City(name="San Francisco")
     new_state.cities.append(new_city)
     """Add the new state and city to the session"""
     session.add(new_state)

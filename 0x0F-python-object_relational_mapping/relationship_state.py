@@ -3,11 +3,12 @@
 The class definition of a State
 and an instance Base = declarative_base()
 """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, MetaData, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-Base = declarative_base()
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
 class State(Base):
