@@ -23,7 +23,7 @@ if __name__ == '__main__':
     """Create a session"""
     session = Session()
     """Query the database"""
-    for row in session.query(State).filter(State.name.like('%a%')).order_by(State.id):
+    for row in session.query(State).filter(State.name.like('%a%')):
         print(row.id, row.name, sep=", ")
     """Close the session"""
     session.close()
