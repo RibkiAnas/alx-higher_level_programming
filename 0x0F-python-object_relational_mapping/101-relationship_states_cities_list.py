@@ -27,7 +27,7 @@ if __name__ == '__main__':
     Query the database for all states, joined with cities,
     order by states.id and cities.id
     """
-    for state in session.query(State).order_by(State.id).all():
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("\t{}: {}".format(city.id, city.name))
