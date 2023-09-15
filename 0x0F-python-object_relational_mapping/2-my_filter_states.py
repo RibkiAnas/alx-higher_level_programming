@@ -25,7 +25,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
     """Execute the SQL query"""
     cursor.execute("""SELECT * FROM states
-                   WHERE name = '{}'
+                   WHERE name LIKE BINARY '{}'
                    ORDER BY states.id ASC;"""
                    .format(stateName))
     """Fetch all the rows from the result set"""
