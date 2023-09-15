@@ -27,6 +27,7 @@ if __name__ == '__main__':
     new_state = State(name="California")
     """Create a new city object linked to the new state"""
     new_city = City(name="San Francisco", state=new_state)
+    new_state.cities.append(new_city)
     """Add the new state and city to the session"""
     session.add(new_state)
     session.add(new_city)
