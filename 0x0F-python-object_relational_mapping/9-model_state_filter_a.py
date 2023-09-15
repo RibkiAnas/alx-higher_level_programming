@@ -24,6 +24,6 @@ if __name__ == '__main__':
     session = Session()
     """Query the database"""
     for row in session.query(State).filter(State.name.like('%a%')):
-        print(row.id, row.name, sep=", ")
+        print(row.id, row.name, sep=": ")
     """Close the session"""
     session.close()
