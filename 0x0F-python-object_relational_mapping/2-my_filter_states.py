@@ -24,9 +24,10 @@ if __name__ == '__main__':
     """Create a cursor object"""
     cursor = db.cursor()
     """Execute the SQL query"""
-    cursor.execute(f"""SELECT * FROM states
-                   WHERE name = '{stateName}'
-                   ORDER BY states.id ASC;""")
+    cursor.execute("""SELECT * FROM states
+                   WHERE name = '{}'
+                   ORDER BY states.id ASC;"""
+                   .format(stateName))
     """Fetch all the rows from the result set"""
     rows = cursor.fetchall()
     """Loop through each row and print it"""
