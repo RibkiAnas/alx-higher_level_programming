@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa."""
+"""
+Lists all states with a name
+starting with N (upper N)
+from the database hbtn_0e_0_usa.
+"""
 import MySQLdb
 import sys
 
@@ -20,7 +24,9 @@ if __name__ == '__main__':
     """Create a cursor object"""
     cursor = db.cursor()
     """Execute the SQL query"""
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;")
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;"
+        )
     """Fetch all the rows from the result set"""
     rows = cursor.fetchall()
     """Loop through each row and print it"""
