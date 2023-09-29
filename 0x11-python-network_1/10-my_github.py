@@ -14,9 +14,6 @@ if __name__ == "__main__":
     auth = {'username': username, 'password': password}
     url = 'https://api.github.com/user'
     res = requests.get(url, auth=auth)
-    try:
-        json = res.json()
-        user_id = json.get('id')
-        print(user_id)
-    except ValueError:
-        print(None)
+    json = res.json()
+    user_id = json.get('id')
+    print(user_id)
